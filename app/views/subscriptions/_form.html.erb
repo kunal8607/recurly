@@ -1,0 +1,36 @@
+
+<%= form_for @subscription, :html=>{:class=>'form-horizontal',:style=>"padding-left: 300px"} do |f| %>
+    <% if @subscription.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@subscription.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+          <ul>
+            <% @subscription.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="control-group">
+      <%= f.label :account,:class => "control-label" %><br />
+      <div class= "controls">
+        <%= f.select :account,options_for_select(@accounts.collect{|i| i.email}) ,:prompt => "Select an Account",:class=>"resize_text" %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :plan,:class => "control-label" %><br />
+      <div class= "controls">
+        <%= f.select :plan,options_for_select(@plans.collect{|i|i.plan_code }),:prompt => "Select an Plan",:class=>"resize_text" %>
+      </div>
+    </div>
+    <div  style = "margin-left:180px;">
+    <%= f.submit`Create Plan`,class: "btn btn-primary" %>
+    <%= link_to 'Back', subscriptions_path,:class=>"btn btn-primary"%>
+    </div>
+
+
+<% end %>
+
+

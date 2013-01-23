@@ -1,0 +1,40 @@
+
+<%= form_for @user, :html=>{:class=>'form-horizontal',:style=>"padding-left: 300px"} do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="control-group">
+      <%= f.label :email,:class => "control-label" %><br />
+      <div class= "controls">
+        <%= f.text_field :email,:class=>"resize_text" %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :first_name,:class => "control-label" %><br />
+      <div class= "controls">
+        <%= f.text_field :first_name,:class=>"resize_text" %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :last_name,:class => "control-label" %><br />
+      <div class= "controls">
+        <%= f.text_field :last_name ,:class=>"resize_text" %>
+      </div>
+    </div>
+    <div  style = "margin-left:180px;">
+    <%= f.submit`Create User`,class: "btn btn-primary" %>
+   <%= link_to 'Back', users_path,class:"btn btn-primary"%>
+    </div>
+  <% end %>
+

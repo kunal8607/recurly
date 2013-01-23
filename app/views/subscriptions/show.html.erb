@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h3>Account:</h3>
+  <%= @subscription.account %>
+</p>
+
+<p>
+  <h3>Plan:</h3>
+  <%= @subscription.plan %>
+</p>
+
+
+<%= link_to 'Edit', edit_subscription_path(@subscription),:class=>"btn  btn-primary" %>
+<%= link_to 'Back', subscriptions_path,:class=>"btn  btn-primary" %>

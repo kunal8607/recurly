@@ -1,0 +1,25 @@
+
+<h2 xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+    xmlns="http://www.w3.org/1999/html">Listing users</h2>
+<table class ="table table-bordered">
+  <thead>
+  <tr>
+    <th><center>Account code</center></th>
+    <th><center>Email</center></th>
+    <th><center>First Name</center></th>
+    <th><center>Last Name</center></th>
+  </tr>
+  </thead>
+  <% @users.each do |user| %>
+      <tr>
+        <td width="2px"><center><%= user.account_code%></center></td>
+        <td width="2px"><center><%= user.email %></center></td>
+        <td width="2px"><center><%= user.first_name %></center></td>
+        <td width="2px"><center><%= user.last_name %></center></td>
+      </tr>
+  <% end %>
+</table>
+<div class=right>
+  <%= link_to "New User", new_user_path,:class=>"btn btn-success"%>
+  <%= link_to "Back", root_path,:class=>"btn btn-success"%>
+</div>

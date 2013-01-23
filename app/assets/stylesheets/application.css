@@ -1,0 +1,63 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+
+.resize_main_image
+{
+
+    height:65px;
+    width:940px;
+    margin:0 auto;
+
+}
+.resize_main_image .imgHolder
+{
+   padding: 10px 0 0;
+}
+.resize_main_image .imgHolder  img
+{
+    width: 165px;
+    height:  65px;
+    font-size: 30px;
+    float:left;
+}
+
+.resize_main_image .imgHolder span {
+    float: left;
+    margin: 20px 0 0 10px;
+    font-size: 45px;
+}
+.allBtns {
+    padding: 20px 0 0;
+}
+.allBtns .btn-primary {
+    color: #fff;
+}
+.resize_text
+{
+    margin-top:-11px;
+}
+
+.resize_textarea
+{   margin-top: -17px;
+    width: 205px;
+    height: 100px;
+    font: normal 14px verdana;
+    line-height: 25px;
+    border: solid 1px #ddd;
+
+}
+.btn-primary:hover   {
+    color: #fff;
+}

@@ -1,0 +1,25 @@
+<h2 xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+    xmlns="http://www.w3.org/1999/html">Listing plans</h2>
+<table class ="table table-bordered">
+  <thead>
+  <tr>
+    <th><center>User Name</center></th>
+    <th><center>Description</center></th>
+    <th><center>Ammount</center></th>
+  </tr>
+  </thead>
+  <% @plans.each do |plan| %>
+      <tr>
+        <td width="2px"><center><%= plan.name %></center></td>
+        <td width="2px"><center><%= plan.description %></center></td>
+        <td width="2px"><center><%= "#{(plan.unit_amount_in_cents.to_hash[:USD])/100} USD" %></center></td>
+        <!--<td><%#= link_to 'Show', plan %></td>-->
+        <!--<td><%#= link_to 'Edit', edit_plan_path(plan) %></td>-->
+        <!--<td><%#= link_to 'Destroy', plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+      </tr>
+  <% end %>
+</table>
+<div class=right>
+  <%= link_to "New Plan", new_plan_path,:class=>"btn btn-success"%>
+  <%= link_to "Back", root_path,:class=>"btn btn-success"%>
+</div>
